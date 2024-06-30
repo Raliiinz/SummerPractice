@@ -1,6 +1,5 @@
 package ru.itis.summerpractice
 
-import kotlin.random.Random
 
 open class Car(
     val brand: String,
@@ -62,23 +61,4 @@ class Motorbike(brand: String,
     }
 }
 
-//
-//fun createRandomCar(): Car {
-//    val brands = mapOf(
-//        "Toyota" to listOf("Corolla", "Camry", "RAV4"),
-//        "Honda" to listOf("Civic", "Accord", "CR-V"),
-//        "Ford" to listOf("Fiesta", "Focus", "Escape")
-//    )
-//    val randomBrand = brands.keys.elementAt(Random.nextInt(brands.size))
-//    val randomModels = brands[randomBrand]?.toMutableList()?: mutableListOf()
-//    val randomModel = randomModels.random()
-//    val randomYear = (1990..2022).random()
-//    val colors = listOf("Black", "White", "Grey", "Red", "Blue", "Green")
-//    val randomColor = colors.random()
-//
-//    return Car(randomBrand, randomModel, randomYear, randomColor)
-//}
 
-fun race(car1: Car, car2: Car): Car {
-    return if (car1.year > car2.year) car1 else car2
-}
