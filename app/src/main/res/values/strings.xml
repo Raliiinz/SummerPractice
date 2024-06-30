@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SummerPractice</string>
+    <string name="send_buttom_text">Начать гонку</string>
+    <string name="send_editText">Введите количество автомобилей</string>
+</resources>
