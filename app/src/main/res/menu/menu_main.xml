@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mainFragment"
+        android:icon="@drawable/baseline_home_24"
+        android:title="@string/main_screen" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/baseline_person_24"
+        android:title="@string/profile_screen" />
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="@string/settings_screen" />
+
+    <item
+        android:id="@+id/callsFragment"
+        android:icon="@drawable/baseline_call_24"
+        android:title="@string/calls_screen" />
+
+    <item
+        android:id="@+id/messagesFragment"
+        android:icon="@drawable/baseline_message_24"
+        android:title="@string/messages_screen" />
+
+
+
+</menu>

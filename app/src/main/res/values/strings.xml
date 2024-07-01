@@ -1,5 +1,12 @@
 <resources>
-    <string name="app_name">SummerPractice</string>
-    <string name="send_buttom_text">Начать гонку</string>
-    <string name="send_editText">Введите количество автомобилей</string>
+    <string name="app_name">SummerPractice24</string>
+    <string name="send_button_text">Send</string>
+
+    <string name="main_screen">Main</string>
+    <string name="profile_screen">Profile</string>
+    <string name="settings_screen">Settings</string>
+    <string name="messages_screen">Messages</string>
+    <string name="calls_screen">Calls</string>
+    <string name="title_activity_main_fragment">MainFragment</string>
+    <string name="send_buttom_text">Отправить</string>
 </resources>
