@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_callsFragment_to_messageFragment"
             app:destination="@id/messagesFragment" />
+        <action
+            android:id="@+id/action_callsFragment_to_momDetailFragment"
+            app:destination="@id/momDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/messagesFragment"
@@ -61,5 +64,9 @@
         android:name="ru.itis.summerpractice.MessagesTrueFragment"
         android:label="fragment_messages_true"
         tools:layout="@layout/fragment_messages_true" />
+    <fragment
+        android:id="@+id/momDetailFragment"
+        android:name="ru.itis.summerpractice.PersonDetailFragment"
+        android:label="MomDetailFragment" />
 
 </navigation>

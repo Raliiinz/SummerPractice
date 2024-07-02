@@ -9,4 +9,9 @@
     <string name="calls_screen">Calls</string>
     <string name="title_activity_main_fragment">MainFragment</string>
     <string name="send_buttom_text">Отправить</string>
+    <string name="person">Person</string>
+    <string name="id">Id:</string>
+    <string name="name">Name:</string>
+    <string name="number">Number:</string>
+    <string name="go_to_back">Go to back</string>
 </resources>

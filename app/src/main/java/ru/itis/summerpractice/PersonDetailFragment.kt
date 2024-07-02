@@ -3,50 +3,64 @@ package ru.itis.summerpractice
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import ru.itis.summerpractice.databinding.FragmentMomDetailBinding
+import androidx.navigation.fragment.findNavController
+import ru.itis.summerpractice.databinding.FragmentPersonDetailBinding
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 
-class MomDetailFragment : Fragment(R.layout.fragment_mom_detail) {
+class PersonDetailFragment : Fragment(R.layout.fragment_person_detail) {
 
-    private var binding: FragmentMomDetailBinding? = null
+    private var binding: FragmentPersonDetailBinding? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentMomDetailBinding.bind(view)
-        //val bundle = arguments?.bundle<String>()
-        val name = arguments?.getString(ARG_NAME)?: "ERROR"
-        val number = arguments?.getString(ARG_NUMBER)?: "N/A"
-        val image = arguments?.getString(ARG_IMAGE)?: "default_image.png" // Замените на путь к вашему значению по умолчанию
-        val email = arguments?.getString(ARG_NAME) ?: "ERROR"
-
-        binding?.run {
-            tvTitle.text = "$name ($number)"
-            // Предполагаем, что у вас есть ImageView для отображения изображения
-            binding?.ivImage.load(image)
-
-//            ivImage.load(image)
-//         //tvTitle.text = "${tvTitle.text} $email "
-
-
+        binding = FragmentPersonDetailBinding.bind(view)
+        val personId = arguments?.getInt(PERSON_ID)
+        if (personId != null) {
+            val person = PersonRepository.persons.single {
+                it.id == personId
+            }
+            setInfo(person)
         }
 
+        binding?.btnGoToBack?.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    private val options: RequestOptions = RequestOptions
+        .diskCacheStrategyOf(DiskCacheStrategy.ALL)
+
+    private fun setInfo(person: Person) {
+        binding?.run {
+            tvPersonId.text = "${getString(R.string.id)}${person.id}"
+            tvPersonName.text = "${getString(R.string.name)} ${person.name}"
+            tvPersonNumber.text = "${getString(R.string.number)} \n ${person.number}"
+            tvInfotext.text = "${person.notes}"
+
+            Glide.with(this@PersonDetailFragment)
+                .load(person.url)
+                .placeholder(R.drawable.baseline_image_not_supported_24)
+                .error(R.drawable.baseline_error_outline_24)
+                .apply(options)
+                .into(icon)
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
         binding = null
     }
+
     companion object {
 
-        private const val ARG_NAME = "ARG_TEXT"
-        private const val ARG_NUMBER = "ARG_NUMBER"
-        private const val ARG_IMAGE = "ARG_IMAGE"
+        private const val PERSON_ID = "PERSON_ID"
 
-        fun bundle(text: String, number: String, image: String): Bundle = Bundle().apply {
-            putString(ARG_NAME, text)
-            putString(ARG_NUMBER, number)
-            putString(ARG_IMAGE, image)
-
+        fun createBundle(id: Int): Bundle {
+            val bundle = Bundle()
+            bundle.putInt(PERSON_ID, id)
+            return bundle
         }
     }
 
