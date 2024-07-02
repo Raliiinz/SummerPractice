@@ -1,8 +1,9 @@
 package ru.itis.summerpractice
 
-data class City(
+data class Person(
     val id: Int,
     val name: String,
-    val country: String,
+    val number: String,
     val url: String,
+    val notes: String
 )

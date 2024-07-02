@@ -5,10 +5,10 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
-import ru.itis.summerpractice.databinding.ItemCityBinding
+import ru.itis.summerpractice.databinding.ItemPersonBinding
 
-class CityHolder(
-    private val binding: ItemCityBinding,
+class PersonHolder(
+    private val binding: ItemPersonBinding,
     private val glide: RequestManager,
     private val onClick: (Person) -> Unit,
 ) : ViewHolder(binding.root) {
@@ -18,32 +18,22 @@ class CityHolder(
             DiskCacheStrategy.ALL
         )
 
-    private val context: Context
-        get() = itemView.context
-
-    fun onBind(city: Person) {
+    fun onBind(person: Person) {
         binding.run {
-            tvCity.text = city.name
-            tvCountry.text = city.country
+            tvName.text = person.name
+            tvNumber.text = person.number
 
             glide
-                .load(city.url)
+                .load(person.url)
                 .error(R.drawable.img_not_found)
                 .placeholder(R.drawable.img_cat)
                 .apply(requestOptions)
                 .into(ivImage)
 
             root.setOnClickListener {
-                onClick.invoke(city)
+                onClick.invoke(person)
             }
-
-            tvCity.setTextColor(context.getColor(city.getTitleColor()))
         }
     }
 
-    private fun Person.getTitleColor(): Int = if (url.length > 120) {
-        R.color.purple
-    } else {
-        R.color.blue
-    }
 }

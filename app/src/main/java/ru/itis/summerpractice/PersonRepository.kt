@@ -1,130 +1,56 @@
 package ru.itis.summerpractice
 
-object CityRepository {
+object PersonRepository {
 
-    val cities: List<City> = listOf(
-        City(
+    val persons: List<Person> = listOf(
+        Person(
             id = 3,
-            name = "Cat",
-            country = "Catania",
-            url = "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"
+            name = "Mom",
+            number = "+7 (934) 568-23-54",
+            url = "https://thumbs.dreamstime.com/b/%D0%BC%D0%B0%D1%82%D1%8C-%D0%B8-%D1%80%D0%B5%D0%B1%D0%B5%D0%BD%D0%BE%D0%BA-%D0%BC%D0%B0%D0%BC%D0%B0-%D0%BE%D0%B1%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D1%82-%D1%81%D1%8B%D0%BD%D0%B0-%D1%81-%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%BE%D0%B9-%D0%BB%D1%8E%D0%B1%D0%BE%D0%B2%D1%8C%D1%8E-%D0%BD%D0%B5%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C%D1%8E-218510495.jpg",
+            notes = "День рождения - 22.01.1980"
         ),
-        City(
+        Person(
             id = 7,
-            name = "Kazan",
-            country = "Russia",
-            url = "https://planetofhotels.com/guide/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/Kazan-1.jpg"
+            name = "Dad",
+            number = "+7 (934) 568-27-54",
+            url = "https://klev.club/uploads/posts/2023-10/1697202273_klev-club-p-kartinki-chelovek-papa-4.jpg",
+            notes = "День рождения - 12.05.1976"
         ),
-        City(
+        Person(
             id = 1,
-            name = "Paris",
-            country = "France",
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/1200px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg"
+            name = "Brother",
+            number = "+7 (966) 568-23-54",
+            url = "https://fsd.multiurok.ru/html/2023/07/06/s_64a671b91e214/phpsIrJXF_My-family_html_7aff406d29a7814b.jpg",
+            notes = "День рождения - 05.08.2000"
         ),
-        City(
+        Person(
             id = 23,
-            name = "Tokyo",
-            country = "Japan",
-            url = "https://media.cntraveller.com/photos/6343df288d5d266e2e66f082/16:9/w_2560%2Cc_limit/tokyoGettyImages-1031467664.jpeg"
+            name = "Sister",
+            number = "+7 (934) 968-23-54",
+            url = "https://thumbs.dreamstime.com/b/%D1%81%D0%B8%D0%BC%D0%BF%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%8B%D0%B9-%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%B6-%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B0-%D0%BE-%D0%B4%D0%B5%D0%B2%D0%BE%D1%87%D0%BA%D0%B0%D1%85-%D1%81%D0%B8%D0%BC%D0%BF%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0-246353289.jpg",
+            notes = "День рождения - 21.01.2010"
         ),
-        City(
+        Person(
             id = 78,
-            name = "London",
-            country = "Eng",
-            url = "https://i2-prod.mirror.co.uk/incoming/article28871026.ece/ALTERNATES/s1200b/0_London-at-sunset.jpg"
+            name = "Grandmother",
+            number = "+7 (934) 908-23-54",
+            url = "https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-babushka-dlya-detei-na-prozrachnom-fone-40.jpg",
+            notes = "День рождения - 22.09.1960"
         ),
-        City(
+        Person(
             id = 99,
-            name = "Rome",
-            country = "Italy",
-            url = "https://i.natgeofe.com/n/3012ffcc-7361-45f6-98b3-a36d4153f660/colosseum-daylight-rome-italy_16x9.jpg"
+            name = "Grandfather",
+            number = "+7 (934) 568-23-04",
+            url = "https://i.pinimg.com/736x/d4/1f/09/d41f094d518ebe9738f8eb1392ce31a5.jpg",
+            notes = "День рождения - 04.03.1955"
         ),
-    )
-
-    val citiesNew: List<City> = listOf(
-        City(
-            id = 1,
-            name = "Paris",
-            country = "France",
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/1200px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg"
-        ),
-        City(
-            id = 23,
-            name = "Tokyo",
-            country = "Japan",
-            url = "https://media.cntraveller.com/photos/6343df288d5d266e2e66f082/16:9/w_2560%2Cc_limit/tokyoGettyImages-1031467664.jpeg"
-        ),
-        City(
-            id = 3,
-            name = "Cat",
-            country = "Catania",
-            url = "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"
-        ),
-        City(
-            id = 7,
-            name = "Kazan",
-            country = "Russia",
-            url = "https://planetofhotels.com/guide/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/Kazan-1.jpg"
-        ),
-        City(
-            id = 78,
-            name = "London",
-            country = "Eng",
-            url = "https://i2-prod.mirror.co.uk/incoming/article28871026.ece/ALTERNATES/s1200b/0_London-at-sunset.jpg"
-        ),
-        City(
-            id = 99,
-            name = "Rome",
-            country = "Italy",
-            url = "https://i.natgeofe.com/n/3012ffcc-7361-45f6-98b3-a36d4153f660/colosseum-daylight-rome-italy_16x9.jpg"
-        ),
-        City(
-            id = 23,
-            name = "Tokyo",
-            country = "Japan",
-            url = "https://media.cntraveller.com/photos/6343df288d5d266e2e66f082/16:9/w_2560%2Cc_limit/tokyoGettyImages-1031467664.jpeg"
-        ),
-        City(
-            id = 3,
-            name = "Cat",
-            country = "Catania",
-            url = "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"
-        ),
-        City(
-            id = 7,
-            name = "Kazan",
-            country = "Russia",
-            url = "https://planetofhotels.com/guide/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/Kazan-1.jpg"
-        ),
-        City(
-            id = 78,
-            name = "London",
-            country = "Eng",
-            url = "https://i2-prod.mirror.co.uk/incoming/article28871026.ece/ALTERNATES/s1200b/0_London-at-sunset.jpg"
-        ),
-        City(
-            id = 99,
-            name = "Rome",
-            country = "Italy",
-            url = "https://i.natgeofe.com/n/3012ffcc-7361-45f6-98b3-a36d4153f660/colosseum-daylight-rome-italy_16x9.jpg"
-        ),
-        City(
-            id = 23,
-            name = "Tokyo",
-            country = "Japan",
-            url = "https://media.cntraveller.com/photos/6343df288d5d266e2e66f082/16:9/w_2560%2Cc_limit/tokyoGettyImages-1031467664.jpeg"
-        ),
-        City(
-            id = 3,
-            name = "Cat",
-            country = "Catania",
-            url = "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"
-        ),
-        City(
-            id = 7,
-            name = "Kazan",
-            country = "Russia",
-            url = "https://planetofhotels.com/guide/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/Kazan-1.jpg"
-        ),
+        Person(
+            id = 98,
+            name = "Best friend",
+            number = "+7 (934) 568-83-54",
+            url = "https://stihi.ru/pics/2019/11/27/9363.jpg",
+            notes = "День рождения - 15.01.2005"
+        )
     )
 }

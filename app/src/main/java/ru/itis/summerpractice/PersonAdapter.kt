@@ -4,20 +4,20 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
-import ru.itis.summerpractice.databinding.ItemCityBinding
+import ru.itis.summerpractice.databinding.ItemPersonBinding
 
-class CityAdapter(
+class PersonAdapter(
     private var list: List<Person>,
     private val glide: RequestManager,
     private val onClick: (Person) -> Unit,
-) : RecyclerView.Adapter<CityHolder>() {
+) : RecyclerView.Adapter<PersonHolder>() {
 
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): CityHolder = CityHolder(
-        binding = ItemCityBinding.inflate(
+    ): PersonHolder = PersonHolder(
+        binding = ItemPersonBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -26,14 +26,10 @@ class CityAdapter(
         onClick = onClick,
     )
 
-    override fun onBindViewHolder(holder: CityHolder, position: Int) {
+    override fun onBindViewHolder(holder: PersonHolder, position: Int) {
         holder.onBind(list[position])
     }
 
     override fun getItemCount(): Int = list.size
 
-    fun updateDataset(newList: List<Person>) {
-        list = newList
-        notifyDataSetChanged()
-    }
 }
