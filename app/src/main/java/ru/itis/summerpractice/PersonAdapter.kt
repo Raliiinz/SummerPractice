@@ -31,5 +31,6 @@ class PersonAdapter(
     }
 
     override fun getItemCount(): Int = list.size
+    //jhrfbuhr
 
 }
